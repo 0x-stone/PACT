@@ -1,0 +1,77 @@
+{
+  "name": "partial_week",
+  "description": "Member who only managed three threshold days (Mon, Tue, Fri) and skipped the weekend entirely. Below days_required=5: fails honestly, with no cheating flags.",
+  "timezone": "UTC",
+  "weekStart": "2026-11-09",
+  "now": "2026-11-16T00:00:00Z",
+  "records": [
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-09T07:10:00Z",
+      "endTime": "2026-11-09T08:25:00Z",
+      "recordData": {"count": 8432, "unit": "count"},
+      "metadata": {"id": "hc-mon-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T08:25:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-10T06:55:00Z",
+      "endTime": "2026-11-10T07:50:00Z",
+      "recordData": {"count": 3891, "unit": "count"},
+      "metadata": {"id": "hc-tue-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T07:50:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-10T18:05:00Z",
+      "endTime": "2026-11-10T19:00:00Z",
+      "recordData": {"count": 5216, "unit": "count"},
+      "metadata": {"id": "hc-tue-002", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T19:00:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-11T07:05:00Z",
+      "endTime": "2026-11-11T08:05:00Z",
+      "recordData": {"count": 6250, "unit": "count"},
+      "metadata": {"id": "hc-wed-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-11T08:05:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-12T07:00:00Z",
+      "endTime": "2026-11-12T08:00:00Z",
+      "recordData": {"count": 7480, "unit": "count"},
+      "metadata": {"id": "hc-thu-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T08:00:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-13T07:05:00Z",
+      "endTime": "2026-11-13T08:15:00Z",
+      "recordData": {"count": 8645, "unit": "count"},
+      "metadata": {"id": "hc-fri-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-13T08:15:01Z"}
+    }
+  ],
+  "expect": {
+    "daysCompleted": 3,
+    "passed": false,
+    "flagCodes": [],
+    "forbiddenFlagCodes": [
+      "manual_entries_dropped",
+      "unknown_recording_method_dropped",
+      "untrusted_origins_dropped",
+      "duplicate_records",
+      "impossible_step_rate",
+      "flat_daily_totals",
+      "daily_total_over_cap",
+      "multiple_origins_same_day",
+      "future_records",
+      "outside_window"
+    ],
+    "dailySteps": {
+      "2026-11-09": 8432,
+      "2026-11-10": 9107,
+      "2026-11-11": 6250,
+      "2026-11-12": 7480,
+      "2026-11-13": 8645,
+      "2026-11-14": 0,
+      "2026-11-15": 0
+    }
+  }
+}

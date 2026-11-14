@@ -1,0 +1,13 @@
+{
+  "steps_per_day": 8000,
+  "days_required": 5,
+  "stake_yocto": "500000000000000000000000",
+  "quorum_pct": 70,
+  "mint_amount": "100000000000000000000",
+  "burn_amount": "50000000000000000000",
+  "min_members": 5,
+  "reserve_amount": "500000000000000000000",
+  "week_start_day": 1,
+  "day_boundary_timezone_policy": "UTC",
+  "submission_grace_secs": 3600
+}

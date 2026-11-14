@@ -1,0 +1,40 @@
+{
+  "name": "cheater",
+  "description": "Scripted injection, two tells. Mon-Thu: the same total of 9000 every day built from identical 3000-step chunks (perfectly flat daily totals). Friday: 25000 steps in 20 minutes (1250 steps/min, ~4x the elite-sprint ceiling). Only Saturday's realistic 8500 counts.",
+  "timezone": "UTC",
+  "weekStart": "2026-11-09",
+  "now": "2026-11-16T00:00:00Z",
+  "records": [
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T07:00:00Z", "endTime": "2026-11-09T07:35:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-mon-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T07:35:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T12:10:00Z", "endTime": "2026-11-09T12:45:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-mon-002", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T12:45:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T18:20:00Z", "endTime": "2026-11-09T18:55:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-mon-003", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T18:55:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-10T07:00:00Z", "endTime": "2026-11-10T07:35:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-tue-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T07:35:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-10T12:10:00Z", "endTime": "2026-11-10T12:45:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-tue-002", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T12:45:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-10T18:20:00Z", "endTime": "2026-11-10T18:55:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-tue-003", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T18:55:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-11T07:00:00Z", "endTime": "2026-11-11T07:35:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-wed-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-11T07:35:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-11T12:10:00Z", "endTime": "2026-11-11T12:45:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-wed-002", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-11T12:45:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-11T18:20:00Z", "endTime": "2026-11-11T18:55:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-wed-003", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-11T18:55:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-12T07:00:00Z", "endTime": "2026-11-12T07:35:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-thu-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T07:35:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-12T12:10:00Z", "endTime": "2026-11-12T12:45:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-thu-002", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T12:45:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-12T18:20:00Z", "endTime": "2026-11-12T18:55:00Z", "recordData": {"count": 3000, "unit": "count"}, "metadata": {"id": "ch-thu-003", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T18:55:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-13T07:00:00Z", "endTime": "2026-11-13T07:20:00Z", "recordData": {"count": 25000, "unit": "count"}, "metadata": {"id": "ch-fri-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-13T07:20:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-14T07:00:00Z", "endTime": "2026-11-14T08:10:00Z", "recordData": {"count": 8500, "unit": "count"}, "metadata": {"id": "ch-sat-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-14T08:10:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-15T07:00:00Z", "endTime": "2026-11-15T08:00:00Z", "recordData": {"count": 7200, "unit": "count"}, "metadata": {"id": "ch-sun-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-15T08:00:01Z"}}
+  ],
+  "expect": {
+    "daysCompleted": 1,
+    "passed": false,
+    "flagCodes": ["flat_daily_totals", "impossible_step_rate"],
+    "forbiddenFlagCodes": ["manual_entries_dropped", "untrusted_origins_dropped"],
+    "dailySteps": {
+      "2026-11-09": 9000,
+      "2026-11-10": 9000,
+      "2026-11-11": 9000,
+      "2026-11-12": 9000,
+      "2026-11-13": 0,
+      "2026-11-14": 8500,
+      "2026-11-15": 7200
+    },
+    "daysPassed": ["2026-11-14"]
+  }
+}

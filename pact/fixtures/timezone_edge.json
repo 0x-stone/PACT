@@ -1,0 +1,31 @@
+{
+  "name": "timezone_edge",
+  "description": "Member in Asia/Tokyo (UTC+9). Days are local midnight-to-midnight. Four records (Tue, Wed, Fri, Sun) carry a UTC date from the previous calendar day but land on the next local day - a UTC-bucketed pipeline would place them on the wrong days. All 7 local days reach threshold.",
+  "timezone": "Asia/Tokyo",
+  "weekStart": "2026-11-09",
+  "now": "2026-11-16T00:00:00Z",
+  "records": [
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T14:00:00Z", "endTime": "2026-11-09T15:00:00Z", "recordData": {"count": 8432, "unit": "count"}, "metadata": {"id": "tz-mon-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T15:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T15:30:00Z", "endTime": "2026-11-09T16:30:00Z", "recordData": {"count": 8210, "unit": "count"}, "metadata": {"id": "tz-tue-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T16:30:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-10T15:30:00Z", "endTime": "2026-11-10T16:30:00Z", "recordData": {"count": 8645, "unit": "count"}, "metadata": {"id": "tz-wed-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T16:30:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-12T14:00:00Z", "endTime": "2026-11-12T15:00:00Z", "recordData": {"count": 9107, "unit": "count"}, "metadata": {"id": "tz-thu-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T15:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-12T15:30:00Z", "endTime": "2026-11-12T16:30:00Z", "recordData": {"count": 9780, "unit": "count"}, "metadata": {"id": "tz-fri-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T16:30:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-14T14:00:00Z", "endTime": "2026-11-14T15:00:00Z", "recordData": {"count": 10432, "unit": "count"}, "metadata": {"id": "tz-sat-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-14T15:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-14T15:30:00Z", "endTime": "2026-11-14T16:30:00Z", "recordData": {"count": 11210, "unit": "count"}, "metadata": {"id": "tz-sun-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-14T16:30:01Z"}}
+  ],
+  "expect": {
+    "daysCompleted": 7,
+    "passed": true,
+    "flagCodes": [],
+    "forbiddenFlagCodes": ["outside_window", "impossible_step_rate", "manual_entries_dropped"],
+    "dailySteps": {
+      "2026-11-09": 8432,
+      "2026-11-10": 8210,
+      "2026-11-11": 8645,
+      "2026-11-12": 9107,
+      "2026-11-13": 9780,
+      "2026-11-14": 10432,
+      "2026-11-15": 11210
+    }
+  }
+}

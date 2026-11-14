@@ -1,0 +1,29 @@
+{
+  "demo": {
+    "name": "demo",
+    "contract_id": "pact-demo.testnet",
+    "dao_id": "pactdao.testnet",
+    "rpc_url": "https://rpc.testnet.near.org",
+    "backend_base_url": null,
+    "explorer_base_url": "https://testnet.nearblocks.io",
+    "rules_hash": "4b6af96bc4c907f075e164c65b28c5acb24edf7696043dda916effe29eb8b725"
+  },
+  "real": {
+    "name": "real",
+    "contract_id": "pactcontract.testnet",
+    "dao_id": "pactdao.testnet",
+    "rpc_url": "https://rpc.testnet.near.org",
+    "backend_base_url": null,
+    "explorer_base_url": "https://testnet.nearblocks.io",
+    "rules_hash": "c8f1e60f408ea298ee9d2f7718f2c436cd40e762f0422e8147c78afd115f5d19"
+  },
+  "sandbox": {
+    "name": "sandbox",
+    "contract_id": "pact-sandbox.testnet",
+    "dao_id": "pact-sandbox-relayer.testnet",
+    "rpc_url": "https://rpc.testnet.near.org",
+    "backend_base_url": null,
+    "explorer_base_url": "https://testnet.nearblocks.io",
+    "rules_hash": "69b4d0d3a5e4a7ba72a62b6a0390e43c29766d9497175d13411ce27993581dc5"
+  }
+}

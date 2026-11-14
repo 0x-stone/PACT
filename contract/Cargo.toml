@@ -1,0 +1,33 @@
+[package]
+name = "pact-contract"
+version = "0.1.0"
+edition = "2021"
+description = "Pact community fitness contract: NEP-141 token + pact mechanics + settlement attestation."
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+near-sdk = "5.30.1"
+near-contract-standards = "5.30.1"
+ed25519-dalek = { version = "3.0.0", features = ["signature"] }
+
+[dev-dependencies]
+near-sdk = { version = "5.30.1", features = ["unit-testing"] }
+near-workspaces = { version = "0.24.0" }
+hex = "0.4"
+tokio = { version = "1", features = ["full"] }
+serde_json = "1"
+futures = "0.3"
+anyhow = "1"
+# Used in item-5 unit tests to produce real signatures with the test-vector seed
+ed25519-dalek = { version = "3.0.0", features = ["signature"] }
+
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Pact" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#F6F2EA</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+    </style>
+
+    <style name="Theme.Pact.Splash" parent="Theme.Pact">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">#F6F2EA</item>
+        <item name="android:navigationBarColor">#F6F2EA</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

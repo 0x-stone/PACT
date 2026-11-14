@@ -1,0 +1,96 @@
+{
+  "name": "normal_week",
+  "description": "Honest member: automatically recorded steps from a trusted origin (phone sensors via Google Play services) every day of the week. No flags, all days count.",
+  "timezone": "UTC",
+  "weekStart": "2026-11-09",
+  "now": "2026-11-16T00:00:00Z",
+  "records": [
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-09T07:10:00Z",
+      "endTime": "2026-11-09T08:25:00Z",
+      "recordData": {"count": 8432, "unit": "count"},
+      "metadata": {"id": "hc-mon-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T08:25:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-10T06:55:00Z",
+      "endTime": "2026-11-10T07:50:00Z",
+      "recordData": {"count": 3891, "unit": "count"},
+      "metadata": {"id": "hc-tue-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T07:50:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-10T18:05:00Z",
+      "endTime": "2026-11-10T19:00:00Z",
+      "recordData": {"count": 5216, "unit": "count"},
+      "metadata": {"id": "hc-tue-002", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T19:00:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-11T07:05:00Z",
+      "endTime": "2026-11-11T08:15:00Z",
+      "recordData": {"count": 8645, "unit": "count"},
+      "metadata": {"id": "hc-wed-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-11T08:15:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-12T07:00:00Z",
+      "endTime": "2026-11-12T08:20:00Z",
+      "recordData": {"count": 10432, "unit": "count"},
+      "metadata": {"id": "hc-thu-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T08:20:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-13T06:50:00Z",
+      "endTime": "2026-11-13T08:05:00Z",
+      "recordData": {"count": 9780, "unit": "count"},
+      "metadata": {"id": "hc-fri-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-13T08:05:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-14T09:15:00Z",
+      "endTime": "2026-11-14T10:35:00Z",
+      "recordData": {"count": 11210, "unit": "count"},
+      "metadata": {"id": "hc-sat-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-14T10:35:01Z"}
+    },
+    {
+      "recordType": "StepsRecord",
+      "startTime": "2026-11-15T10:05:00Z",
+      "endTime": "2026-11-15T11:20:00Z",
+      "recordData": {"count": 8210, "unit": "count"},
+      "metadata": {"id": "hc-sun-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-15T11:20:01Z"}
+    }
+  ],
+  "expect": {
+    "daysCompleted": 7,
+    "passed": true,
+    "flagCodes": [],
+    "forbiddenFlagCodes": [
+      "manual_entries_dropped",
+      "unknown_recording_method_dropped",
+      "untrusted_origins_dropped",
+      "duplicate_records",
+      "impossible_step_rate",
+      "flat_daily_totals",
+      "daily_total_over_cap",
+      "multiple_origins_same_day",
+      "overlapping_same_origin",
+      "future_records",
+      "outside_window",
+      "invalid_steps",
+      "invalid_time_range",
+      "missing_end_time",
+      "non_steps_records"
+    ],
+    "dailySteps": {
+      "2026-11-09": 8432,
+      "2026-11-10": 9107,
+      "2026-11-11": 8645,
+      "2026-11-12": 10432,
+      "2026-11-13": 9780,
+      "2026-11-14": 11210,
+      "2026-11-15": 8210
+    }
+  }
+}

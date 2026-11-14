@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="pact-backend-url" content="">
+  <title>PACT Public Dashboard — Community Fitness Contract</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Top App Bar (Matches TodayScreen.kt TopBar) -->
+    <header class="app-header">
+      <div class="top-bar">
+        <div class="brand-lockup">
+          <!-- Exact PACT Logo Mark vector from PactLogoMark.kt -->
+          <svg class="pact-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="PACT Logo">
+            <!-- Top-left blue arc (#2338E6): sweeps ~152 deg -->
+            <path d="M 39.96 90.27 A 41.5 41.5 0 0 1 39.96 9.73" stroke="#2338E6" stroke-width="16" stroke-linecap="round" />
+            <!-- Bottom-right orange arc (#FF4A1C): sweeps ~152 deg -->
+            <path d="M 60.04 9.73 A 41.5 41.5 0 0 1 60.04 90.27" stroke="#FF4A1C" stroke-width="16" stroke-linecap="round" />
+          </svg>
+          <div class="brand-text-col">
+            <span class="brand-subtitle">Community Fitness Protocol</span>
+            <span class="brand-title">P A C T</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="profile-selector">
+            <button class="profile-btn active" data-profile="demo">Demo Profile</button>
+            <button class="profile-btn" data-profile="real">Real Testnet</button>
+            <button class="profile-btn" data-profile="sandbox">Judge Sandbox</button>
+          </div>
+          <button class="refresh-btn" id="refresh-btn" title="Refresh live on-chain state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+            Refresh
+          </button>
+        </div>
+      </div>
+
+      <!-- Sub Bar: Active Contract + Live Status Chip -->
+      <div class="sub-bar">
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="font-size: 13px; color: var(--muted-text); font-weight: 500;">Contract:</span>
+          <a class="explorer-link has-tooltip" id="header-contract-link" href="https://testnet.nearblocks.io/address/pact-demo.testnet" target="_blank" rel="noopener noreferrer" data-tooltip="Inspect contract on NearBlocks ↗">
+            <strong style="font-family: var(--font-mono); font-size: 13px;" id="header-contract-id">pact-demo.testnet</strong>
+            <span class="explorer-badge">NearBlocks ↗</span>
+          </a>
+          <button class="copy-mini-btn" id="copy-contract-btn" title="Copy contract account ID" style="padding: 2px 8px; font-size: 11px;">Copy</button>
+        </div>
+
+        <div class="status-chip live" id="global-status-pill">
+          <span class="status-dot"></span>
+          <span id="global-status-text">Live (Direct NEAR RPC)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Prominent Demo Notice -->
+    <div class="notice-banner" id="demo-notice">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+      <div>
+        <strong>DEMO — scripted test participants.</strong> Activity shown here is not independent community adoption. Used for testing and judging with accelerated grace periods.
+      </div>
+    </div>
+
+    <!-- Section B: Token Economics (Live Contract Data) -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Token Economics</h2>
+        <span class="section-tag">NEP-141 PACT Token &bull; Live Contract Reads</span>
+      </div>
+
+      <div class="grid-cards">
+        <a class="metric-card interactive explorer-link has-tooltip" id="card-token-supply" href="https://testnet.nearblocks.io/token/pact-demo.testnet" target="_blank" rel="noopener noreferrer" data-tooltip="Inspect PACT Token on NearBlocks ↗" style="text-decoration: none; color: inherit;">
+          <div class="metric-label">
+            <span>Total Supply</span>
+            <span class="explorer-badge">Token ↗</span>
+          </div>
+          <div class="metric-value" id="econ-total-supply">— PACT</div>
+          <div class="metric-sub">Circulating + reserve supply</div>
+        </a>
+
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>Reserve Balance</span>
+            <span style="font-size: 10px; color: var(--muted-text);">get_reserve_balance</span>
+          </div>
+          <div class="metric-value" id="econ-reserve-balance">— PACT</div>
+          <div class="metric-sub">Stored in contract reserve</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>Reward Escrow</span>
+            <span style="font-size: 10px; color: var(--muted-text);">get_reward_escrow</span>
+          </div>
+          <div class="metric-value" id="econ-reward-escrow">— PACT</div>
+          <div class="metric-sub">Escrowed for qualifiers</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>Total Minted</span>
+            <span style="font-size: 10px; color: var(--muted-text);">get_total_minted</span>
+          </div>
+          <div class="metric-value" id="econ-total-minted">— PACT</div>
+          <div class="metric-sub">Lifetime minted for passed weeks</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>Total Burned</span>
+            <span style="font-size: 10px; color: var(--muted-text);">get_total_burned</span>
+          </div>
+          <div class="metric-value" id="econ-total-burned">— PACT</div>
+          <div class="metric-sub">Burned on failed challenge weeks</div>
+        </div>
+      </div>
+
+      <div class="invariant-note" id="econ-invariant-note">
+        Invariant verified: total_supply == reserve_init + total_minted - total_burned
+      </div>
+    </section>
+
+    <!-- Section C: Challenges & Quorum (Live Contract Data) -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Challenges &amp; Quorum</h2>
+        <span class="section-tag">Authoritative On-Chain Views</span>
+      </div>
+
+      <div class="challenge-hero">
+        <div class="challenge-main">
+          <div class="ch-header-row">
+            <div class="ch-title-wrap">
+              <h3 id="ch-id">Loading Challenge...</h3>
+              <div class="ch-window" id="ch-window">—</div>
+            </div>
+            <div>
+              <span class="outcome-pill pending" id="ch-outcome-pill">Loading</span>
+            </div>
+          </div>
+
+          <div class="ch-stats-row">
+            <div class="ch-stat-box">
+              <div class="ch-stat-lbl">Target</div>
+              <div class="ch-stat-num" id="ch-target">—</div>
+            </div>
+            <div class="ch-stat-box">
+              <div class="ch-stat-lbl">Enrolled</div>
+              <div class="ch-stat-num" id="ch-enrolled">—</div>
+            </div>
+            <div class="ch-stat-box">
+              <div class="ch-stat-lbl">Submitted</div>
+              <div class="ch-stat-num" id="ch-submitted">—</div>
+            </div>
+            <div class="ch-stat-box">
+              <div class="ch-stat-lbl">Qualifiers</div>
+              <div class="ch-stat-num" id="ch-qualifiers">—</div>
+            </div>
+            <div class="ch-stat-box">
+              <div class="ch-stat-lbl">Quorum Req.</div>
+              <div class="ch-stat-num" id="ch-quorum-thresh">—</div>
+            </div>
+          </div>
+
+          <div style="font-size: 12px; color: var(--muted-text);">
+            <strong>Quorum Formula:</strong> <code>qualifiers * 100 &gt;= enrolled * quorum_pct</code>. Non-submitters count as non-qualifiers against enrolled members.
+          </div>
+        </div>
+
+        <div class="challenge-ring-side">
+          <div class="ring-box">
+            <svg viewBox="0 0 140 140">
+              <circle class="ring-track" cx="70" cy="70" r="56" />
+              <circle class="ring-fill" id="progress-ring-circle" cx="70" cy="70" r="56" style="stroke-dasharray: 352 352; stroke-dashoffset: 352;" />
+            </svg>
+            <div class="ring-data">
+              <span class="ring-pct-label" id="ring-pct-text">0%</span>
+              <span class="ring-caption">Qualified</span>
+            </div>
+          </div>
+          <div style="font-size: 13px; color: var(--muted-text);" id="quorum-target-display">
+            Target Quorum: <strong>70%</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Immutable Parameters -->
+      <div class="params-grid">
+        <div class="param-item">
+          <span>Quorum Requirement</span>
+          <span id="rule-quorum">—</span>
+        </div>
+        <div class="param-item">
+          <span>Member Stake</span>
+          <span id="rule-stake">—</span>
+        </div>
+        <div class="param-item">
+          <span>Min Members</span>
+          <span id="rule-min-members">—</span>
+        </div>
+        <div class="param-item">
+          <span>Submission Grace</span>
+          <span id="rule-grace">—</span>
+        </div>
+      </div>
+
+      <!-- Rules Hash Commitment -->
+      <div class="hash-card">
+        <div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--ink-text); margin-bottom: 2px;">
+            On-Chain Rules Hash (SHA-256 Commitment)
+          </div>
+          <div class="hash-text" id="rule-onchain-hash">Loading...</div>
+        </div>
+        <div>
+          <span class="outcome-pill pending" id="hash-match-badge" style="font-size: 11px;">Comparing with Backend...</span>
+        </div>
+      </div>
+
+      <!-- Recent Challenges Table -->
+      <div style="margin-top: 20px;">
+        <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--ink-text);">Recent Challenges History</h3>
+        <div class="table-wrap">
+          <table class="pact-table">
+            <thead>
+              <tr>
+                <th>Challenge ID</th>
+                <th>Window Start</th>
+                <th>Target (Days)</th>
+                <th>Enrolled</th>
+                <th>Submitted</th>
+                <th>Qualifiers</th>
+                <th>Outcome</th>
+              </tr>
+            </thead>
+            <tbody id="challenges-table-body">
+              <tr><td colspan="7" style="text-align: center; color: var(--muted-text); padding: 18px;">Loading on-chain challenges...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section D: Community & Governance -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Community &amp; DAO Governance</h2>
+        <span class="section-tag">Sputnik v2 Multi-Sig &bull; pactdao.testnet</span>
+      </div>
+
+      <div class="grid-cards">
+        <a class="metric-card interactive explorer-link has-tooltip" id="card-dao-treasury" href="https://testnet.nearblocks.io/address/pactdao.testnet" target="_blank" rel="noopener noreferrer" data-tooltip="Inspect pactdao.testnet on NearBlocks ↗" style="text-decoration: none; color: inherit;">
+          <div class="metric-label">
+            <span>DAO Treasury</span>
+            <span class="explorer-badge">NearBlocks ↗</span>
+          </div>
+          <div class="metric-value" id="dao-treasury-balance">— NEAR</div>
+          <div class="metric-sub">Multi-sig reserve balance</div>
+        </a>
+
+        <div class="metric-card" style="grid-column: span 2;">
+          <div class="metric-label">
+            <span>Council Members (Hover to Inspect on Explorer)</span>
+            <span style="font-size: 10px; color: var(--muted-text);">3 Signers</span>
+          </div>
+          <div id="dao-council-members" style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px;">
+            Loading council...
+          </div>
+          <div class="metric-sub" style="margin-top: 8px;">Public multi-sig council identities</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">
+            <span>Vote Policies</span>
+            <span style="font-size: 10px; color: var(--muted-text);">RoleWeight</span>
+          </div>
+          <div class="metric-value" style="font-size: 14px; font-family: var(--font-mono);" id="dao-vote-policy">
+            Loading...
+          </div>
+          <div class="metric-sub">Per-kind threshold approvals</div>
+        </div>
+      </div>
+
+      <!-- DAO Governance Proposals Table -->
+      <div style="margin-top: 20px;">
+        <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--ink-text);">
+          Recent DAO Proposals (Hover Rows to Inspect Exact Block on Explorer)
+        </h3>
+        <div class="table-wrap">
+          <table class="pact-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Kind</th>
+                <th>Description</th>
+                <th>Proposer</th>
+                <th>Status</th>
+                <th>Council Votes</th>
+                <th>Explorer</th>
+              </tr>
+            </thead>
+            <tbody id="dao-proposals-table-body">
+              <tr><td colspan="7" style="text-align: center; color: var(--muted-text); padding: 18px;">Loading DAO proposals...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="margin-top: 14px; background: var(--surface-white); border: 1px solid var(--card-border); border-radius: var(--card-radius); padding: 14px 18px; font-size: 12px; color: var(--muted-text);">
+        <strong>Privacy Commitment:</strong> No individual health measurements, daily step counts, or GPS traces are written to the blockchain. Participant addresses are kept strictly off-chain from raw health data; only signed cryptographic attestations are submitted to the contract.
+      </div>
+    </section>
+
+    <!-- Section E: Demo Cycle & Simulation -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Verified Lifecycle Evidence</h2>
+        <span class="section-tag">Challenge demo-15 (100% On-Chain Completed)</span>
+      </div>
+
+      <div class="pact-card white">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+          <div>
+            <h3 style="font-size: 16px; font-weight: 800; color: var(--ink-text);">End-to-End Challenge Lifecycle</h3>
+            <p style="font-size: 12px; color: var(--muted-text); margin-top: 2px;">
+              Fully verified on NEAR Testnet: from DAO proposal #21 to settlement, reward claim, and stake return.
+            </p>
+          </div>
+          <span class="outcome-pill success">Settled &amp; Claimed ✓</span>
+        </div>
+
+        <div class="cycle-list" id="demo-cycle-steps">
+          <!-- Filled dynamically -->
+        </div>
+
+        <div style="margin-top: 24px;">
+          <h4 style="font-size: 13px; font-weight: 700; color: var(--ink-text); margin-bottom: 8px;">
+            Verified Participants (Hover to Inspect on Explorer)
+          </h4>
+          <div class="participants-flex" id="demo-participants-grid">
+            <!-- Filled dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section F: Verify & Trust Footer -->
+    <footer class="app-footer">
+      <div class="pact-card white" style="text-align: left; margin-bottom: 24px;">
+        <h3 style="font-size: 16px; font-weight: 800; color: var(--ink-text); margin-bottom: 4px;">
+          Direct Verification Commands (NEAR CLI)
+        </h3>
+        <p style="font-size: 12px; color: var(--muted-text);">
+          Verify all on-chain states independently using standard CLI commands:
+        </p>
+
+        <div class="cli-container">
+          <div class="cli-row">
+            <code id="cli-cmd-challenges">near view pact-demo.testnet get_challenges '{"limit": 10}'</code>
+            <button class="copy-mini-btn" data-copy="near view pact-demo.testnet get_challenges '{&quot;limit&quot;: 10}'">Copy</button>
+          </div>
+          <div class="cli-row">
+            <code id="cli-cmd-supply">near view pact-demo.testnet ft_total_supply '{}'</code>
+            <button class="copy-mini-btn" data-copy="near view pact-demo.testnet ft_total_supply '{}'">Copy</button>
+          </div>
+          <div class="cli-row">
+            <code id="cli-cmd-reserve">near view pact-demo.testnet get_reserve_balance '{}'</code>
+            <button class="copy-mini-btn" data-copy="near view pact-demo.testnet get_reserve_balance '{}'">Copy</button>
+          </div>
+          <div class="cli-row">
+            <code id="cli-cmd-hash">near view pact-demo.testnet get_rules_hash '{}'</code>
+            <button class="copy-mini-btn" data-copy="near view pact-demo.testnet get_rules_hash '{}'">Copy</button>
+          </div>
+          <div class="cli-row">
+            <code id="cli-cmd-dao">near view pactdao.testnet get_policy '{}'</code>
+            <button class="copy-mini-btn" data-copy="near view pactdao.testnet get_policy '{}'">Copy</button>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 20px;">
+          <div>
+            <h4 style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">Oracle Trust Model</h4>
+            <p style="font-size: 12px; color: var(--muted-text); line-height: 1.5;">
+              Health Connect steps are evaluated off-chain by the backend oracle. The contract verifies Ed25519 signatures and domain separation but cannot inspect raw step sensors.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">Stake Protection</h4>
+            <p style="font-size: 12px; color: var(--muted-text); line-height: 1.5;">
+              Stakes are strictly refundable in all outcomes (Success, Failure, Void). The contract never burns or confiscates participant stakes.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">NEAR Testnet Scope</h4>
+            <p style="font-size: 12px; color: var(--muted-text); line-height: 1.5;">
+              All contracts and tokens run on NEAR Testnet for hackathon judging. Testnet PACT tokens hold no monetary or financial value.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        PACT Community Fitness Protocol &bull; Deployed on NEAR Testnet &bull; Read-Only Public Dashboard
+      </div>
+    </footer>
+  </div>
+
+  <script src="env.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

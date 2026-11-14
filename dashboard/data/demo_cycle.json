@@ -1,0 +1,115 @@
+{
+  "challenge_id": "demo-15",
+  "status": "Verified Lifecycle Completed",
+  "contract_id": "pact-demo.testnet",
+  "dao_id": "pactdao.testnet",
+  "dao_proposal_id": 21,
+  "dao_description": "Set demo challenge demo-15 (20 steps, 1 day, 5 mins)",
+  "dao_proposer": "0xgoku.testnet",
+  "dao_approvers": ["0xgoku.testnet", "0xpiccolo.testnet"],
+  "target_steps": 20,
+  "duration_seconds": 300,
+  "start_ns": "1794603266000000000",
+  "end_ns": "1794603566000000000",
+  "outcome": "Success",
+  "quorum_required_pct": 70,
+  "quorum_achieved_pct": 100,
+  "reward_per_qualifier": "20000000000000000000",
+  "reward_per_qualifier_pact": "20",
+  "participants": [
+    {
+      "account_id": "0xgow.testnet",
+      "role": "Real User (Android App)",
+      "is_scripted": false,
+      "enrolled": true,
+      "submitted": true,
+      "qualified": true,
+      "claimed_reward": true,
+      "withdrawn_stake": true
+    },
+    {
+      "account_id": "pact-t1-test.testnet",
+      "role": "Scripted Test Runner 1",
+      "is_scripted": true,
+      "enrolled": true,
+      "submitted": true,
+      "qualified": true,
+      "claimed_reward": true,
+      "withdrawn_stake": true
+    },
+    {
+      "account_id": "pact-t2-test.testnet",
+      "role": "Scripted Test Runner 2",
+      "is_scripted": true,
+      "enrolled": true,
+      "submitted": true,
+      "qualified": true,
+      "claimed_reward": true,
+      "withdrawn_stake": true
+    },
+    {
+      "account_id": "pact-t3-test.testnet",
+      "role": "Scripted Test Runner 3",
+      "is_scripted": true,
+      "enrolled": true,
+      "submitted": true,
+      "qualified": true,
+      "claimed_reward": true,
+      "withdrawn_stake": true
+    },
+    {
+      "account_id": "pact-t4-test.testnet",
+      "role": "Scripted Test Runner 4",
+      "is_scripted": true,
+      "enrolled": true,
+      "submitted": true,
+      "qualified": true,
+      "claimed_reward": true,
+      "withdrawn_stake": true
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "name": "DAO Challenge Proposal",
+      "detail": "Proposal #21 submitted by 0xgoku.testnet to call set_next_challenge('demo-15', 20 steps, 5 mins).",
+      "block_height": "277560005",
+      "verified_on_chain": true
+    },
+    {
+      "step": 2,
+      "name": "DAO Council Multi-Sig Approval",
+      "detail": "Voted and approved by 0xgoku.testnet and 0xpiccolo.testnet (2/2 votes meets RoleWeight threshold).",
+      "block_height": "277560282",
+      "verified_on_chain": true
+    },
+    {
+      "step": 3,
+      "name": "Member Enrollment",
+      "detail": "5 accounts enrolled depositing 0.5 NEAR stake each (min_members: 5).",
+      "block_height": "277560380",
+      "verified_on_chain": true
+    },
+    {
+      "step": 4,
+      "name": "Health Connect & Oracle Attestation",
+      "detail": "Steps verified off-chain; Ed25519 Borsh-serialized attestations submitted to pact-demo.testnet.",
+      "block_height": "277560850",
+      "verified_on_chain": true
+    },
+    {
+      "step": 5,
+      "name": "Challenge Settlement",
+      "detail": "settle_week called after grace period. 5 of 5 qualified (100% > 70% quorum). Outcome: Success. 100 PACT minted (20 PACT/qualifier).",
+      "block_height": "277561120",
+      "verified_on_chain": true
+    },
+    {
+      "step": 6,
+      "name": "Reward Claim & Stake Withdrawal",
+      "detail": "All 5 qualifiers claimed 20 PACT reward and withdrew 0.5 NEAR stake in full.",
+      "block_height": "277561450",
+      "verified_on_chain": true
+    }
+  ]
+}

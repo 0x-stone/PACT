@@ -1,0 +1,39 @@
+{
+  "name": "duplicate_sources",
+  "description": "Phone (Google Play services) and watch (Samsung Health) both record the same days, plus one record uploaded twice verbatim (same Health Connect id). The day's steps are the max per-origin total, never the sum - Monday is 8710, not 17142. The re-uploaded record counts once.",
+  "timezone": "UTC",
+  "weekStart": "2026-11-09",
+  "now": "2026-11-16T00:00:00Z",
+  "records": [
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T07:10:00Z", "endTime": "2026-11-09T08:25:00Z", "recordData": {"count": 8432, "unit": "count"}, "metadata": {"id": "du-mon-phone-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T08:25:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T07:05:00Z", "endTime": "2026-11-09T08:30:00Z", "recordData": {"count": 8710, "unit": "count"}, "metadata": {"id": "du-mon-watch-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.sec.android.app.shealth", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T08:30:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T07:05:00Z", "endTime": "2026-11-09T08:30:00Z", "recordData": {"count": 8710, "unit": "count"}, "metadata": {"id": "du-mon-watch-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.sec.android.app.shealth", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T08:30:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-10T06:55:00Z", "endTime": "2026-11-10T07:50:00Z", "recordData": {"count": 4000, "unit": "count"}, "metadata": {"id": "du-tue-phone-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T07:50:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-10T18:05:00Z", "endTime": "2026-11-10T19:00:00Z", "recordData": {"count": 5107, "unit": "count"}, "metadata": {"id": "du-tue-phone-002", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T19:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-10T07:00:00Z", "endTime": "2026-11-10T08:10:00Z", "recordData": {"count": 9250, "unit": "count"}, "metadata": {"id": "du-tue-watch-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.sec.android.app.shealth", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T08:10:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-11T07:05:00Z", "endTime": "2026-11-11T08:15:00Z", "recordData": {"count": 8645, "unit": "count"}, "metadata": {"id": "du-wed-phone-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-11T08:15:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-11T07:00:00Z", "endTime": "2026-11-11T08:10:00Z", "recordData": {"count": 8400, "unit": "count"}, "metadata": {"id": "du-wed-watch-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.sec.android.app.shealth", "recordingMethod": 2, "lastModifiedTime": "2026-11-11T08:10:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-12T07:00:00Z", "endTime": "2026-11-12T08:20:00Z", "recordData": {"count": 10432, "unit": "count"}, "metadata": {"id": "du-thu-phone-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T08:20:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-12T06:55:00Z", "endTime": "2026-11-12T08:25:00Z", "recordData": {"count": 10680, "unit": "count"}, "metadata": {"id": "du-thu-watch-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.sec.android.app.shealth", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T08:25:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-13T06:50:00Z", "endTime": "2026-11-13T08:05:00Z", "recordData": {"count": 9780, "unit": "count"}, "metadata": {"id": "du-fri-phone-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-13T08:05:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-14T09:15:00Z", "endTime": "2026-11-14T10:35:00Z", "recordData": {"count": 11210, "unit": "count"}, "metadata": {"id": "du-sat-phone-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-14T10:35:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-14T09:10:00Z", "endTime": "2026-11-14T10:40:00Z", "recordData": {"count": 11500, "unit": "count"}, "metadata": {"id": "du-sat-watch-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.sec.android.app.shealth", "recordingMethod": 2, "lastModifiedTime": "2026-11-14T10:40:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-15T10:05:00Z", "endTime": "2026-11-15T11:20:00Z", "recordData": {"count": 8210, "unit": "count"}, "metadata": {"id": "du-sun-phone-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-15T11:20:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-15T10:00:00Z", "endTime": "2026-11-15T11:15:00Z", "recordData": {"count": 8445, "unit": "count"}, "metadata": {"id": "du-sun-watch-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.sec.android.app.shealth", "recordingMethod": 2, "lastModifiedTime": "2026-11-15T11:15:01Z"}}
+  ],
+  "expect": {
+    "daysCompleted": 7,
+    "passed": true,
+    "flagCodes": ["multiple_origins_same_day", "duplicate_records"],
+    "forbiddenFlagCodes": ["impossible_step_rate", "flat_daily_totals", "overlapping_same_origin"],
+    "dailySteps": {
+      "2026-11-09": 8710,
+      "2026-11-10": 9250,
+      "2026-11-11": 8645,
+      "2026-11-12": 10680,
+      "2026-11-13": 9780,
+      "2026-11-14": 11500,
+      "2026-11-15": 8445
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Deterministic settlement attestation signed by the Python backend (pact/attestation.py); verified byte-for-byte by the Rust contract tests (contract/src/attestation.rs mirror).",
+  "schemaTag": "OPAQUE-PACT-ATTESTATION-V1",
+  "contractId": "opaque-pact.testnet",
+  "challengeId": "2026-11-09",
+  "accountId": "alice.testnet",
+  "passed": true,
+  "expiry": 1795392000,
+  "publicKey": "ed25519:39ucT4v8YJpFjnjEhpbz2hFCt1QPxmtGRViAvujEpn8N",
+  "signature": "dNQmOM5B8Q2wHfzpDlRrf2OUm/f7YUTcHSxHtKYapA1wKoUfdQiWFobQwTyYQWXa6bBKVIoCdtjqkwrDmZPvAg==",
+  "payloadBorshHex": "1a0000004f50415155452d504143542d4154544553544154494f4e2d5631130000006f70617175652d706163742e746573746e65740a000000323032362d31312d30390d000000616c6963652e746573746e6574010082036b00000000",
+  "generatedBy": "pact/scripts/make_attestation_vector.py"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "manual_entry_spoof",
+  "description": "Every day has a manual-entry record of 50000 steps typed into Google Fit (recordingMethod=3, plausible 3-hour duration of ~278 steps/min, so it would pass the rate check if not for the recording-method filter) plus small honest sensor totals. Manual entries never contribute, so no day reaches 8000.",
+  "timezone": "UTC",
+  "weekStart": "2026-11-09",
+  "now": "2026-11-16T00:00:00Z",
+  "records": [
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T06:00:00Z", "endTime": "2026-11-09T09:00:00Z", "recordData": {"count": 50000, "unit": "count"}, "metadata": {"id": "ms-mon-manual-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.apps.fitness", "recordingMethod": 3, "lastModifiedTime": "2026-11-09T09:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-09T07:10:00Z", "endTime": "2026-11-09T08:25:00Z", "recordData": {"count": 6250, "unit": "count"}, "metadata": {"id": "ms-mon-auto-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-09T08:25:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-10T06:00:00Z", "endTime": "2026-11-10T09:00:00Z", "recordData": {"count": 50000, "unit": "count"}, "metadata": {"id": "ms-tue-manual-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.apps.fitness", "recordingMethod": 3, "lastModifiedTime": "2026-11-10T09:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-10T07:10:00Z", "endTime": "2026-11-10T08:25:00Z", "recordData": {"count": 7480, "unit": "count"}, "metadata": {"id": "ms-tue-auto-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-10T08:25:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-11T06:00:00Z", "endTime": "2026-11-11T09:00:00Z", "recordData": {"count": 50000, "unit": "count"}, "metadata": {"id": "ms-wed-manual-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.apps.fitness", "recordingMethod": 3, "lastModifiedTime": "2026-11-11T09:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-11T07:10:00Z", "endTime": "2026-11-11T08:25:00Z", "recordData": {"count": 3400, "unit": "count"}, "metadata": {"id": "ms-wed-auto-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-11T08:25:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-12T06:00:00Z", "endTime": "2026-11-12T09:00:00Z", "recordData": {"count": 50000, "unit": "count"}, "metadata": {"id": "ms-thu-manual-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.apps.fitness", "recordingMethod": 3, "lastModifiedTime": "2026-11-12T09:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-12T07:10:00Z", "endTime": "2026-11-12T08:25:00Z", "recordData": {"count": 6500, "unit": "count"}, "metadata": {"id": "ms-thu-auto-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-12T08:25:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-13T06:00:00Z", "endTime": "2026-11-13T09:00:00Z", "recordData": {"count": 50000, "unit": "count"}, "metadata": {"id": "ms-fri-manual-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.apps.fitness", "recordingMethod": 3, "lastModifiedTime": "2026-11-13T09:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-13T07:10:00Z", "endTime": "2026-11-13T08:25:00Z", "recordData": {"count": 5200, "unit": "count"}, "metadata": {"id": "ms-fri-auto-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-13T08:25:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-14T06:00:00Z", "endTime": "2026-11-14T09:00:00Z", "recordData": {"count": 50000, "unit": "count"}, "metadata": {"id": "ms-sat-manual-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.apps.fitness", "recordingMethod": 3, "lastModifiedTime": "2026-11-14T09:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-14T07:10:00Z", "endTime": "2026-11-14T08:25:00Z", "recordData": {"count": 2600, "unit": "count"}, "metadata": {"id": "ms-sat-auto-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-14T08:25:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-15T06:00:00Z", "endTime": "2026-11-15T09:00:00Z", "recordData": {"count": 50000, "unit": "count"}, "metadata": {"id": "ms-sun-manual-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.apps.fitness", "recordingMethod": 3, "lastModifiedTime": "2026-11-15T09:00:01Z"}},
+    {"recordType": "StepsRecord", "startTime": "2026-11-15T07:10:00Z", "endTime": "2026-11-15T08:25:00Z", "recordData": {"count": 4100, "unit": "count"}, "metadata": {"id": "ms-sun-auto-001", "clientRecordId": null, "clientRecordVersion": 0, "dataOrigin": "com.google.android.gms.fitness", "recordingMethod": 2, "lastModifiedTime": "2026-11-15T08:25:01Z"}}
+  ],
+  "expect": {
+    "daysCompleted": 0,
+    "passed": false,
+    "flagCodes": ["manual_entries_dropped"],
+    "forbiddenFlagCodes": ["impossible_step_rate", "flat_daily_totals", "untrusted_origins_dropped"],
+    "dailySteps": {
+      "2026-11-09": 6250,
+      "2026-11-10": 7480,
+      "2026-11-11": 3400,
+      "2026-11-12": 6500,
+      "2026-11-13": 5200,
+      "2026-11-14": 2600,
+      "2026-11-15": 4100
+    }
+  }
+}

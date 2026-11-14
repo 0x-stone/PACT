@@ -1,0 +1,33 @@
+# Git and IDE metadata
+.git/
+.gitignore
+.idea/
+.vscode/
+
+# Android build outputs and SDK configuration
+.gradle/
+app/
+gradle/
+build/
+local.properties
+*.apk
+*.wasm
+*.aab
+
+# Contract and tests
+contract/target/
+.pytest_cache/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# Local SQLite databases (data must be mounted via volume)
+backend/data/*.db
+backend/data/*.sqlite
+*.db
+
+# Temporary logs & documents
+*.log
+docs/
+simulation/
+scripts/
