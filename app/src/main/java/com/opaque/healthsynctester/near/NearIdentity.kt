@@ -232,7 +232,7 @@ class NearIdentity(val context: Context) {
 
     /** Backward-compatible creation method for legacy tester harness. */
     suspend fun createTestnetAccount(desiredAccountId: String): NearResult =
-        createAndSignInAccount(desiredAccountId, "https://quickness-shining-latticed.ngrok-free.dev") {}
+        createAndSignInAccount(desiredAccountId, "http://97.107.130.182:8000") {}
 
     suspend fun createAndSignInAccount(
         desiredAccountId: String,

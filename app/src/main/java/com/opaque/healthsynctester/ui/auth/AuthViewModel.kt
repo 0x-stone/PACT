@@ -43,7 +43,7 @@ sealed class AuthScreenState {
 
 class AuthViewModel(
     private val nearIdentity: NearIdentity,
-    private val backendBaseUrlProvider: () -> String = { "https://quickness-shining-latticed.ngrok-free.dev" }
+    private val backendBaseUrlProvider: () -> String = { "http://97.107.130.182:8000" }
 ) : ViewModel() {
 
     var state by mutableStateOf<AuthScreenState>(AuthScreenState.Initializing)

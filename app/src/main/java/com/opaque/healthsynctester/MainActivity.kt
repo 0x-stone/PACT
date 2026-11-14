@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
     private val authViewModel by lazy {
         AuthViewModel(
             nearIdentity = nearIdentity,
-            backendBaseUrlProvider = { "https://quickness-shining-latticed.ngrok-free.dev" }
+            backendBaseUrlProvider = { "http://97.107.130.182:8000" }
         )
     }
 
@@ -62,7 +62,7 @@ class MainActivity : ComponentActivity() {
             healthConnectManager = healthConnectManager,
             syncRepository = syncRepository,
             nearIdentity = nearIdentity,
-            backendBaseUrlProvider = { "https://quickness-shining-latticed.ngrok-free.dev" }
+            backendBaseUrlProvider = { "http://97.107.130.182:8000" }
         )
     }
 
@@ -179,7 +179,7 @@ fun HealthSyncScreen(
     var grantedPermissions by remember { mutableStateOf<Set<String>>(emptySet()) }
 
     // Backend configuration
-    var backendUrl by remember { mutableStateOf("https://quickness-shining-latticed.ngrok-free.dev") }
+    var backendUrl by remember { mutableStateOf("http://97.107.130.182:8000") }
     var apiKey by remember { mutableStateOf("test-api-key") }
 
     // NEAR identity & session state
